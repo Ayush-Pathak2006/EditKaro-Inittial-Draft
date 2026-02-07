@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,6 +9,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <script>
+      (function () {
+        const saved = localStorage.getItem("editkaro_theme");
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme =
+          saved === "dark" || saved === "light"
+            ? saved
+            : prefersDark
+              ? "dark"
+              : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
 
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -32,7 +48,11 @@
         </div>
 
         <div class="nav-controls">
-          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle theme"
+          >
             <span id="themeIcon">🌙</span>
           </button>
           <button id="navToggle" class="nav-toggle">☰</button>
@@ -43,7 +63,9 @@
             <li><a href="/Services/services.html">Services</a></li>
             <li><a href="/About/about.html">About</a></li>
             <li><a href="/Contact/contact.html">Contact</a></li>
-            <li><a href="/Auth/login.html" class="cta" id="authBtn">Sign In</a></li>
+            <li>
+              <a href="/Auth/login.html" class="cta" id="authBtn">Sign In</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -64,8 +86,18 @@
           </p>
 
           <div class="buttons">
-            <a class="btn btn-primary" id="startProjectBtn" href="/Contact/contact.html">Start a Project</a>
-            <a class="btn btn-ghost" id="watchVideoBtn" href="/Services/services.html">Watch Demo</a>
+            <a
+              class="btn btn-primary"
+              id="startProjectBtn"
+              href="/Contact/contact.html"
+              >Start a Project</a
+            >
+            <a
+              class="btn btn-ghost"
+              id="watchVideoBtn"
+              href="/Services/services.html"
+              >Watch Demo</a
+            >
           </div>
 
           <section class="trust-section trust-section--marquee">
@@ -87,7 +119,12 @@
 
         <div class="hero-right">
           <div class="hero-img" aria-hidden="true">
-            <img id="heroImg" src="/resource/imp2.png" data-light-src="/resource/imp2.png" data-dark-src="/resource/imp.png" />
+            <img
+              id="heroImg"
+              src="/resource/imp2.png"
+              data-light-src="/resource/imp2.png"
+              data-dark-src="/resource/imp.png"
+            />
           </div>
         </div>
       </section>
@@ -99,7 +136,9 @@
           <p class="trending-sub">Latest and most impactful offerings.</p>
           <div class="trending-wrap">
             <div class="trending-card">
-              <div class="trending-media"><img src="/resource/TrendingCard.png" alt="Premium" /></div>
+              <div class="trending-media">
+                <img src="/resource/TrendingCard.png" alt="Premium" />
+              </div>
             </div>
           </div>
         </div>
@@ -117,14 +156,28 @@
               <article class="plan-card" data-index="0">
                 <div class="plan-media-wrapper">
                   <div class="plan-badge">Starter</div>
-                  <img src="/resource/Plan1.jpeg" alt="Starter plan" class="plan-media" />
+                  <img
+                    src="/resource/Plan1.jpeg"
+                    alt="Starter plan"
+                    class="plan-media"
+                  />
                 </div>
                 <div class="plan-body">
                   <h3 class="plan-name">Starter Plan</h3>
-                  <p class="plan-desc">Basic social edits, 72-hour turnaround.</p>
-                  <div class="plan-price-wrap"><div class="plan-price">₹799 <span class="period">/month</span></div></div>
+                  <p class="plan-desc">
+                    Basic social edits, 72-hour turnaround.
+                  </p>
+                  <div class="plan-price-wrap">
+                    <div class="plan-price">
+                      ₹799 <span class="period">/month</span>
+                    </div>
+                  </div>
                   <div class="plan-ctas">
-                    <a href="/Contact/contact.html"><button class="btn btn-primary subscribe">Subscribe</button></a>
+                    <a href="/Contact/contact.html"
+                      ><button class="btn btn-primary subscribe">
+                        Subscribe
+                      </button></a
+                    >
                     <button class="btn preview">Preview</button>
                   </div>
                 </div>
@@ -132,14 +185,28 @@
               <article class="plan-card" data-index="1">
                 <div class="plan-media-wrapper">
                   <div class="plan-badge">Pro</div>
-                  <img src="/resource/TrendingCard.png" alt="Pro plan" class="plan-media" />
+                  <img
+                    src="/resource/TrendingCard.png"
+                    alt="Pro plan"
+                    class="plan-media"
+                  />
                 </div>
                 <div class="plan-body">
                   <h3 class="plan-name">Pro Creator</h3>
-                  <p class="plan-desc">Priority edits, color grading, 48-hour turnaround.</p>
-                  <div class="plan-price-wrap"><div class="plan-price">₹2,499 <span class="period">/month</span></div></div>
+                  <p class="plan-desc">
+                    Priority edits, color grading, 48-hour turnaround.
+                  </p>
+                  <div class="plan-price-wrap">
+                    <div class="plan-price">
+                      ₹2,499 <span class="period">/month</span>
+                    </div>
+                  </div>
                   <div class="plan-ctas">
-                    <a href="/Contact/contact.html"><button class="btn btn-primary subscribe">Subscribe</button></a>
+                    <a href="/Contact/contact.html"
+                      ><button class="btn btn-primary subscribe">
+                        Subscribe
+                      </button></a
+                    >
                     <button class="btn preview">Preview</button>
                   </div>
                 </div>
@@ -147,38 +214,58 @@
               <article class="plan-card" data-index="2">
                 <div class="plan-media-wrapper">
                   <div class="plan-badge">Premium</div>
-                  <img src="/resource/Plan3.jpeg" alt="Premium plan" class="plan-media" />
+                  <img
+                    src="/resource/Plan3.jpeg"
+                    alt="Premium plan"
+                    class="plan-media"
+                  />
                 </div>
                 <div class="plan-body">
                   <h3 class="plan-name">Agency Elite</h3>
-                  <p class="plan-desc">Dedicated editor, 24-hour delivery, unlimited revisions.</p>
-                  <div class="plan-price-wrap"><div class="plan-price">₹4,999 <span class="period">/month</span></div></div>
+                  <p class="plan-desc">
+                    Dedicated editor, 24-hour delivery, unlimited revisions.
+                  </p>
+                  <div class="plan-price-wrap">
+                    <div class="plan-price">
+                      ₹4,999 <span class="period">/month</span>
+                    </div>
+                  </div>
                   <div class="plan-ctas">
-                    <a href="/Contact/contact.html"><button class="btn btn-primary subscribe">Subscribe</button></a>
+                    <a href="/Contact/contact.html"
+                      ><button class="btn btn-primary subscribe">
+                        Subscribe
+                      </button></a
+                    >
                     <button class="btn preview">Preview</button>
                   </div>
                 </div>
               </article>
             </div>
           </div>
-          
         </div>
       </section>
-
     </main>
 
     <footer>
       <div class="container footer-grid">
-        <div><div class="footer-title">EditKaro.in</div><div class="muted">Social Media Marketing & Video Editing</div></div>
-        <div style="text-align: right" class="muted"><div>© EditKaro 2025</div><div style="margin-top: 6px">Email: EditKaro@gmail.com</div></div>
+        <div>
+          <div class="footer-title">EditKaro.in</div>
+          <div class="muted">Social Media Marketing & Video Editing</div>
+        </div>
+        <div style="text-align: right" class="muted">
+          <div>© EditKaro 2025</div>
+          <div style="margin-top: 6px">Email: EditKaro@gmail.com</div>
+        </div>
       </div>
     </footer>
 
     <!-- NEW: Pop-up Preview Card (Replaces Modal) -->
     <div id="planPreviewOverlay" class="preview-overlay" aria-hidden="true">
       <div class="preview-card">
-        <button id="closePreview" class="close-icon" aria-label="Close">✕</button>
-        
+        <button id="closePreview" class="close-icon" aria-label="Close">
+          ✕
+        </button>
+
         <div class="preview-header">
           <div class="preview-badge" id="previewBadge">Plan Name</div>
           <h2 id="previewTitle" class="preview-title">Title Here</h2>
@@ -186,7 +273,7 @@
 
         <div class="preview-body">
           <p id="previewDesc" class="preview-desc">Description text...</p>
-          
+
           <div class="preview-list-title">What's Included:</div>
           <ul id="previewFeatures" class="preview-features">
             <!-- Features injected by JS -->
@@ -194,7 +281,12 @@
         </div>
 
         <div class="preview-footer">
-          <a href="/Contact/contact.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+          <a
+            href="/Contact/contact.html"
+            class="btn btn-primary"
+            style="width: 100%; text-align: center"
+            >Get Started</a
+          >
         </div>
       </div>
     </div>
